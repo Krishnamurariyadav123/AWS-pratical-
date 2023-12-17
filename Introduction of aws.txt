@@ -1,0 +1,37 @@
+                                                Introduction 
+
+
+1. what is Cloud Computing.
+Ans.  Cloud computing is technology which allow to store and remote access of data over internet.It allow many resource like storage, networking,server,database etc.
+
+
+2.Deployment Model in Cloud ?
+
+Ans. 1. Public cloud: this  cloud services are available to anyone over the internet, and the infrastructure is owned and             managed by the cloud provider. Example Google Cloud Platform, Amazon Web Services, and Microsoft Azure.
+     2.Private cloud: The cloud services are only accessible to a specific organization or group of users.Example: VMware, OpenStack, and IBM Cloud Private.
+     3.Hybrid cloud: The cloud services are a combination of public and private clouds, and the infrastructure is distributed across both types of clouds.Example  Google Anthos, AWS Outposts, and Azure Stack.
+
+
+3. Service Model in Cloud ?
+Ans . 1. Software as a Service (SaaS): This model provides software applications as a service over the internet, without requiring the users to install or maintain them. Examples of SaaS are Google Apps, Salesforce, Dropbox, and Slack.
+2.Platform as a Service (PaaS): This model provides a platform and tools for developing, testing, and deploying applications over the internet, without requiring the users to manage the underlying infrastructure. Examples of PaaS are AWS Elastic Beanstalk, Google App Engine.
+3.Infrastructure as a Service (IaaS): This model provides computing resources such as servers, storage, networks, and operating systems as a service over the internet, without requiring the users to purchase or maintain them. Examples of IaaS are Amazon Web Services, Microsoft Azure, Google Cloud Platform.
+
+
+4. Architecture of Cloud Computing ?
+Ans. Architecture of cloud computing is the way of designing and organizing the components and technologies that enable cloud computing. It consists of two main parts: frontend and backend. The frontend is the part that the user interacts with, such as a web browser or a mobile app. The backend is the part that provides the cloud services, such as servers, storage, databases, and software. The frontend and the backend are connected by a network, such as the internet or a private network. There are different types of cloud services, such as Software as a Service (SaaS), Platform as a Service (PaaS), and Infrastructure as a Service (IaaS), which offer different levels of abstraction and control over the cloud resources. For more information, you can check out these web pages.
+
+5. AWS Global Infrastructure Count ?
+Ans. According to the web search results, AWS Global Infrastructure consists of 32 Regions and 102 Availability Zones as of August 2023, with plans for 4 more Regions and 12 more Availability Zones1. AWS also has 36 Local Zones, 29 Wavelength Zones, 600+ Points of Presence, and 13 Regional Edge Caches.
+
+6.Why do we use region ?
+Ans. We use regions in AWS to optimize the performance, cost, and compliance of our cloud resources. By choosing a region that is close to our location and our customers’ location, we can reduce the network latency and improve the user experience. By comparing the prices and services of different regions, we can find the best fit for our budget and needs. By following the regulatory requirements of different regions, we can ensure the security and privacy of our data. Regions also provide fault tolerance and resilience, as they are isolated from each other and have multiple availability zones within them.
+
+7. What is service ? & What are resources ?
+Ans. service:In cloud computing, a "service" refers to a specific capability or functionality provided to users over the internet. These services can include computing power, storage, databases, networking, software applications, and more.
+Cloud services are typically categorized into three main types: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS). Each type represents a different level of abstraction and management responsibility for the users.
+Resources:In the cloud computing context, "resources" refer to the computing components and capabilities that are made available to users. These resources can include virtual machines, storage space, databases, networking infrastructure, and other elements necessary for running applications and services in the cloud.
+
+
+
+
