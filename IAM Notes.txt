@@ -1,0 +1,161 @@
+1. How many resources do we have in IAM ?
+Ans. Users: IAM users represent individual people, services, or applications that interact with AWS resources. Each user has security credentials associated with their account.
+
+Groups: Groups are collections of IAM users. You can attach policies to groups to grant permissions collectively to all users in the group.
+
+Roles: IAM roles are similar to users, but they are not associated with a specific person. Instead, roles are assumed by entities such as AWS services, EC2 instances, or users from another AWS account.
+
+Policies: IAM policies are JSON documents that define permissions. They can be attached to users, groups, or roles to specify what actions are allowed or denied on what resources.
+
+
+2. Deployment model in IAM ?
+
+Ans. Root Account: When you sign up for AWS, you create an AWS account, often referred to as the "root account." This account has full access to all AWS services and resources. It is recommended to use the root account only for initial setup and to create additional IAM users for everyday tasks.
+
+IAM Users: IAM users are entities representing individual people, applications, or services that interact with AWS resources. These users are created within the AWS account and can be assigned specific permissions through IAM policies.
+
+IAM Groups: IAM groups are collections of IAM users. Instead of attaching policies to individual users, you can attach policies to groups and then add users to those groups. This helps manage permissions more efficiently.
+
+IAM Roles: IAM roles are entities that define a set of permissions for making AWS service requests. Roles are not associated with a specific user or group but can be assumed by IAM users, AWS services, or even entities from other AWS accounts.
+
+IAM Policies: IAM policies are JSON documents that define permissions. Policies can be attached to IAM users, groups, or roles to grant or deny access to AWS resources.
+ 
+
+3. Identities in IAM ?
+Ans.  AM Users:
+IAM users represent individual people, applications, or services that need access to AWS resources. Each IAM user has a unique identity and security credentials (such as an access key and a secret key) associated with their account.
+IAM Groups:
+IAM groups are collections of IAM users. Instead of attaching policies directly to users, you can attach policies to groups. This allows you to manage permissions more efficiently by assigning a set of permissions to a group and then adding users to that group.
+IAM Roles:
+IAM roles are a way to grant permissions to entities that you trust. Roles are not associated with a specific IAM user or group but can be assumed by IAM users, AWS services, or even entities from other AWS accounts. Roles are often used to delegate access to resources.
+
+4. What is an IAM User ?
+Ans. An IAM User is an entity that you create in AWS to interact with AWS resources. An IAM User has a name, a password for the AWS Management Console, and access keys for the AWS API or CLI. An IAM User can have different permissions to access different AWS services and resources.An IAM User is different from the AWS account root user, which has complete access to all AWS services and resources. You should not use the root user for your everyday tasks, but only for tasks that require root user credentials.
+ 
+5.What is the IAM Group ?
+Ans. An IAM group is a collection of IAM users who share the same permissions for accessing AWS resources and services. You can use IAM groups to simplify and scale the management of permissions for multiple users in your AWS account.
+
+6.What is the IAM Policy ?
+Ans. An IAM policy is a set of rules that defines the permissions for accessing and managing AWS resources and services. An IAM policy is attached to an identity (user, group, or role) or a resource (such as an S3 bucket or an EC2 instance) to grant or deny access to specific actions and resources.
+
+7.What is the IAM Role ?
+Ans. An IAM role is an AWS identity that has specific permissions to access and manage AWS resources and services. An IAM role is similar to an IAM user, but it does not have a password or access keys associated with it. Instead, it provides temporary security credentials to the entity that assumes the role.
+
+8. Where do we attach Identity Based Policy ?
+Ans.Identity-based policies are policies that are attached to IAM identities, such as users, groups, or roles. These policies specify what actions and resources the identities can access in AWS1. You can attach identity-based policies to identities as either managed policies or inline policies. Managed policies are standalone policies that can be attached to multiple identities and managed independently. Inline policies are policies that are embedded within a single identity and exist only as long as the identity exists.
+
+9. Where do we attach Resource Based Policy ?
+Ans. Resource-based policies are policies that are attached to AWS resources, such as Amazon S3 buckets, Amazon SQS queues, or IAM roles. Resource-based policies specify who can access the resource and what actions they can perform on it. You can attach resource-based policies to resources as inline policies, which are embedded within the resource and exist only as long as the resource exists.
+
+10. Can we be able to create Policy via json code ?
+Ans. Yes, you can create policies using JSON code in various cloud services, such as AWS, Azure, Google Cloud, and Oracle. JSON is a standard format for representing structured data and policies are written as JSON documents that specify the rules and permissions for accessing and managing resources.
+To create policies using JSON code, you need to follow the syntax and structure of the policy language for each service. You also need to know the actions, resources, and condition keys that are supported by the service. You can use the documentation, examples, and tools provided by each service to help you create and validate your policies
+  
+11. What is dominator policy ?
+Ans. A dominator policy is a policy that grants the most permissions to an identity or a resource in a cloud service, such as AWS, Azure, Google Cloud, or Oracle. A dominator policy is usually attached to an administrator role or a root user, who can access and manage all the resources and services in the cloud account.
+A dominator policy is different from a denominator policy, which is a policy that grants the least permissions to an identity or a resource in a cloud service. A denominator policy is usually attached to a guest role or a limited user, who can only access and manage a few resources and services in the cloud account.
+
+12. What is ARN ? What are the fields in ARN ?
+Ans. An ARN, or Amazon Resource Name, is a string that uniquely identifies an AWS resource, such as an EC2 instance, an S3 bucket, or an IAM user1. An ARN consists of six components, separated by colons:
+
+The prefix arn to indicate that it is an ARN.
+The partition that the resource is in, such as aws, aws-cn, or aws-us-gov.
+The service that the resource belongs to, such as ec2, s3, or iam.
+The region that the resource is located in, such as us-east-1 or ap-south-1.
+The account ID of the owner of the resource, such as 123456789012.
+The resource ID or type and ID, which varies depending on the service and resource
+ 
+
+13. How many types of ARN Partition ?
+Ans. An ARN, or Amazon Resource Name, is a string that uniquely identifies an AWS resource, such as an EC2 instance, an S3 bucket, or an IAM user1. An ARN consists of six components, separated by colons, one of which is the partition.
+
+The partition is the group of AWS Regions that the resource belongs to. Each AWS account is scoped to one partition. The following are the supported partitions:
+
+aws - AWS Regions
+aws-cn - China Regions
+aws-us-gov - AWS GovCloud (US) Regions
+
+14. What are Tags ?
+Ans. Tags are key-value pairs that you can attach to AWS resources, such as EC2 instances, S3 buckets, or IAM users, to organize and identify them. Tags can help you manage, search, filter, and track your AWS resources based on various criteria, such as purpose, owner, environment, or project.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
