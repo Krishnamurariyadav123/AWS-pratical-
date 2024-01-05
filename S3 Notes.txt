@@ -1,0 +1,185 @@
+1. Difference between Block storage & Object Storage ?
+Ans. Block storage  - - >  in AWS is a type of data storage that divides data into fixed-size blocks and stores them on physical devices. Block storage is fast, efficient, and flexible for accessing and modifying data. AWS offers two types of block storage services: Amazon Elastic Block Store (Amazon EBS) and Amazon EC2 instance store.
+Amazon EBS is a service that provides persistent block storage volumes for Amazon EC2 instances. You can create and attach EBS volumes to EC2 instances and use them as primary or secondary storage devices. EBS volumes are independent of the life cycle of EC2 instances and can be detached and reattached to different instances. EBS volumes are also replicated within the same Availability Zone to provide high availability and durability. EBS offers different volume types to suit different performance and cost needs, such as General Purpose SSD, Provisioned IOPS SSD, Throughput Optimized HDD, and Cold HDD.
+
+Object storage  - - > in AWS is a type of data storage that stores and manages data as whole objects, rather than as blocks or files. Object storage is ideal for storing and retrieving large amounts of unstructured data, such as images, videos, or documents, that do not need frequent changes. AWS offers two types of object storage services: Amazon S3 and Amazon S3 Glacier.
+
+2. Difference between static website & dynamic website ?
+Ans. A static website is a website that serves pages using a fixed number of pre-built files composed of HTML, CSS, and JavaScript. A static website has no backend server-side processing and no database. Any “dynamic” functionality associated with the static site is performed on the client side, which means the code is executed in visitors’ browsers rather than on the server. Static websites are quick and easy to create, but have limited interactivity.
+
+A dynamic website is a website that changes its content or layout depending on various factors, such as user input, time, location, or browser settings. A dynamic website uses a server-side scripting language, such as PHP, Python, or Ruby, to generate web pages on the fly, based on the user’s request and the data stored in a database. A dynamic website can also use client-side scripting, such as JavaScript, to enhance the user interface and interactivity
+
+3.What are the naming rules ?
+Ans.Naming rules in AWS are the guidelines and restrictions for choosing names for AWS resources, such as buckets, instances, users, roles, policies, and so on. Naming rules can vary depending on the type and service of the resource, but they generally aim to ensure uniqueness, readability, and compatibility across AWS. Some common naming rules in AWS are:
+
+1.Names must be between 3 and 255 characters long, depending on the resource type.
+2.Names can consist only of lowercase letters, numbers, hyphens, dots, underscores, or slashes, depending on the resource type.
+3.Names must not contain spaces, special characters, or reserved words, depending on the resource type.
+4.Names must not start or end with a hyphen, dot, underscore, or slash, depending on the resource type.
+5.Names must not be formatted as an IP address, unless the resource type allows it.
+6.Names must be unique within the scope of the resource, such as the account, region, zone, or partition.
+
+4.What is the major resource of S3 Bucket ?
+Ans.The major resource of S3 Bucket is the object. An object is a file that you store in a bucket. An object consists of data, a key, and metadata. The data is the content of the file, such as an image, a video, or a document. The key is the name of the object, which is unique within the bucket. The metadata is a set of name-value pairs that provide additional information about the object, such as its size, type, or date. Objects are the basic units of storage and retrieval in S3.
+
+5.Why do we need to host static websites instead of dynamic websites ?
+Ans.Static websites are faster and more secure than dynamic websites, as they do not require any server-side processing or database interaction. Static websites can be easily hosted and delivered by a content delivery network (CDN), which reduces the latency and bandwidth consumption for the users. Static websites are also less vulnerable to common web attacks, such as SQL injection or cross-site scripting, as they do not execute any code on the server.
+Static websites are simpler and cheaper to develop and maintain than dynamic websites, as they do not require any backend development or server administration. Static websites can be built using simple languages, such as HTML, CSS, and JavaScript, and can be deployed using various tools and platforms, such as GitHub Pages, Netlify, or AWS Amplify. Static websites also have lower hosting costs, as they do not consume any server resources or database storage.
+
+6.What is versioning & Why do we need versioning ?
+Ans.Versioning is the process of managing and tracking changes to a software program, an API, a file, or any other type of data. Versioning enables developers and users to identify different releases of the data, compare and revert to previous versions, and communicate the changes and their impact. Versioning is important for several reasons, such as:
+
+It improves the quality and reliability of the data, as it allows testing, debugging, and fixing errors before releasing new versions.
+It enhances the security and compliance of the data, as it allows auditing, reviewing, and verifying the changes and their sources.
+
+7.What are the objects and types of objects that we are uploading into the S3 Bucket ?
+Ans.The objects that we are uploading into the S3 bucket are files that we want to store and access in AWS. The types of objects that we can upload are any file types, such as images, videos, documents, or code. An object consists of data, a key, and metadata. The data is the content of the file, the key is the name of the object, and the metadata is a set of name-value pairs that provide additional information about the object
+
+8.What is S3 Multipart upload ?
+Ans.S3 Multipart Upload is a feature provided by Amazon S3 (Simple Storage Service) that allows you to upload large objects in parts. This feature is particularly useful when dealing with very large files, as it helps to optimize the upload process and provides benefits such as increased performance, fault tolerance, and the ability to pause and resume uploads.
+
+9.What are the storage classes in Amazon S3 ? 
+Ans.S3 Standard: 
+This is the default storage class for frequently accessed data that requires high performance and availability. S3 Standard offers low latency and high throughput, and is suitable for a wide range of applications, such as cloud applications, dynamic websites, content distribution, and big data analytics. S3 Standard stores data redundantly across multiple Availability Zones within an AWS Region.
+S3 Intelligent-Tiering: 
+This is the storage class for data with unknown or changing access patterns, that automatically optimizes the cost by moving data between two access tiers: a frequent access tier and a lower-cost infrequent access tier. S3 Intelligent-Tiering monitors the access patterns of your data and moves it to the most cost-effective tier, without any performance impact or operational overhead. S3 Intelligent-Tiering also stores data redundantly across multiple Availability Zones within an AWS Region.
+S3 Standard-IA:
+ This is the storage class for less frequently accessed data that requires high performance and availability, but can tolerate a lower retrieval fee. S3 Standard-IA is ideal for long-term storage, backups, and disaster recovery, as it offers the same low latency and high throughput as S3 Standard, but at a lower storage cost. S3 Standard-IA also stores data redundantly across multiple Availability Zones within an AWS Region.
+S3 One Zone-IA: 
+This is the storage class for less frequently accessed data that requires high performance and availability, but does not require resilience to the loss of an Availability Zone. S3 One Zone-IA is similar to S3 Standard-IA, but stores data in a single Availability Zone, which reduces the storage cost by 20%.
+S3 Glacier:
+ This is the storage class for archive data that needs to be retained for long periods of time, but does not require immediate access. S3 Glacier offers the lowest storage cost in AWS, and provides three options for data retrieval: Expedited, Standard, and Bulk. These options vary in retrieval time (from minutes to hours) and cost (from high to low). S3 Glacier also stores data redundantly across multiple Availability Zones within an AWS Region.
+S3 Glacier Deep Archive:
+ This is the storage class for archive data that needs to be retained for long periods of time, but requires access within 12 hours. S3 Glacier Deep Archive is the lowest cost storage class in AWS, and the lowest cost storage option available in the cloud. S3 Glacier Deep Archive is ideal for long-term data preservation and digital archival, such as regulatory compliance, historical reference, or cultural preservation. S3 Glacier Deep Archive also stores data redundantly across multiple Availability Zones within an AWS Region.
+
+10.What is ACL ?
+Ans.ACL stands for Access Control List. It is a list of permissions that specify who or what can access a resource, such as a file, a folder, a network, or a database. ACLs can be used to grant or deny access to resources based on different criteria, such as user identity, role, group, time, location, or protocol. ACLs can also be used to control the type of access, such as read, write, execute, or delete. ACLs are commonly used in computer security, network security, and data management.
+
+11.What is a Life cycle policy ? Why do we need to use the life cycle rule ?
+Ans.A life cycle policy is a set of rules that define how to manage the storage and access of your objects in Amazon S3 over time. A life cycle policy can help you reduce your storage costs, optimize your performance, and comply with your retention requirements. A life cycle policy can perform two types of actions on your objects:
+
+Transition actions: These actions move your objects from one storage class to another, based on the age and access frequency of the objects. For example, you can use a transition action to move your objects from S3 Standard to S3 Standard-IA after 30 days, and then to S3 Glacier after 90 days, to save on storage costs for less frequently accessed data.
+Expiration actions: These actions delete your objects or their versions, based on the age or expiration date of the objects. For example, you can use an expiration action to delete your objects after 180 days, or to delete the previous versions of your objects after 30 days, to free up storage space and comply with your retention policies.
+
+12.How can we give public access to our bucket ?
+Ans.To give public access to your bucket, you need to modify the block public access settings and the bucket policy of your bucket. The block public access settings are a set of options that prevent public access to your bucket and objects through ACLs or bucket policies. The bucket policy is a document that defines the permissions for your bucket and objects. Here are the steps to follow:
+
+Open the Amazon S3 console and choose the bucket that you want to make public.
+Choose the Permissions tab, and then choose Edit under Block public access settings for this bucket.
+Clear the Block all public access option, and then choose Save changes. This will allow you to grant public access through ACLs or bucket policies.
+Choose the Permissions tab again, and then choose Edit under Bucket policy.
+
+13. What is CORS ?
+Ans.CORS stands for Cross-Origin Resource Sharing. It is a mechanism that allows web browsers to request and receive resources from different domains or origins than the one they are currently on. CORS enables web applications to access data or services from other websites, such as APIs, images, or fonts, without violating the same-origin policy, which is a security restriction that prevents cross-domain requests by default. CORS works by adding special HTTP headers to the requests and responses, which indicate the allowed origins, methods, headers, and credentials for cross-origin requests.
+
+14. What is S3 Inventory ?
+Ans.S3 inventory is a tool provided by AWS for managing and maintaining blob storage. It provides a detailed list of your objects and offers information about many metadata fields, such as storage class and size. S3 inventory is a valuable tool to AWS admins who want to keep track of their data usage and costs. You can also use S3 inventory to audit and report on the replication and encryption status of your objects for business, compliance, and regulatory needs.You can query S3 inventory with standard SQL queries by using Amazon Athena, Amazon Redshift Spectrum, and other tools, such as Presto, Apache Hive, and Apache Spark3. This can help you analyse your data stored in Amazon S3 and optimize your storage costs and performance.
+
+15.What does it mean by Requester pays ?
+Ans.Requester pays is a feature that allows the owner of a cloud storage bucket to transfer the cost of accessing the bucket or its objects to the requester. This means that the requester must provide a billing project in their request, and they will be charged for the data transfer and the request. The bucket owner will still pay for the data storage. Requester pays is useful if you want to share data with others, but you don’t want to pay for their usage. For example, you can use requester pays to share large datasets, such as geospatial information or web crawling data.
+
+16.What is the secondary word to Transfer acceleration ?Why do we need to use this transfer acceleration ?
+Ans.Transfer acceleration is a feature that allows you to speed up both uploads and downloads with your S3 bucket. It works by utilizing Amazon’s global network of edge locations, the same infrastructure used by other AWS services such as Cloudfront and Route531.
+You may want to use this transfer acceleration if you have large files or datasets that you need to transfer over long distances between your client and an S3 bucket. Transfer acceleration can reduce the latency and variability of your transfers, and improve the bandwidth utilization and throughput. Transfer acceleration can also help you save costs by reducing the data transfer charges between AWS Regions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
