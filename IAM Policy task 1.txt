@@ -1,0 +1,167 @@
+IAM Task 
+
+1.Create a policy to access all objects in a specific bucket.
+Ans. Creat the bucket. go to permission. 
+select the policy generator 
+1. ploicy type
+2. give the permission to the specific bucket and principal and action
+3. click to generate Policy.
+{
+  "Id": "Policy1706106566262",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1706106563310",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::bucket345ks",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::919272611772:user/krishnamurari1"
+        ]
+      }
+    }
+  ]
+}
+4. after generate the policy attach to bucket.
+
+2.Create a policy to access only 2 objects in a specific bucket.
+Ans. 1. create the bucket , upload the oject in the bucket 
+     2. Go to generater policy , add the principal and specific objcet arn to access the object in the bucket.
+     3. {
+  "Id": "Policy1706106566262",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1706106563310",
+      "Action": "s3:*",
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::bucket345ks",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::919272611772:user/krishnamurari1"
+        ]
+      }
+    }
+  ]
+}
+
+3.Create a policy to deny the access of Specific bucket.
+Ans. 1. Create the bucket and add the object in the bucket.
+     2. go to permission and generate the policy for deny the specific user and object inside the bucket. 
+     3.{
+  "Id": "Policy1706106955199",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1706106946943",
+      "Action": "s3:*",
+      "Effect": "Deny",
+      "Resource": "arn:aws:s3:::bucket345ks",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::919272611772:user/krishnamurari1"
+        ]
+      }
+    }
+  ]
+}
+
+4.Create policy to create the user only and can attach policy to them.
+Ans. 1. Create  the IAM user and attach the policy the administrator access to the user , so user get the permission to access the aws resource.
+     2. sign to the user and check the permission which is give to that user.
+
+
+5.Create a policy to place the user in a group only.
+Ans. 1. Create the IAM  and attach the group policy to the IAM  user 
+     2. sign to the user and check the permission 
+
+6.Policy to get "read" access of all users, groups
+Ans. 1. Creat the policy for the specific services ( ec2, s3,IAM, Coud Front)  of  read only 
+     2. and attach to the IAM user 
+
+7.Policy to get access to billing, ec2 and cloudwatch.
+Ans. 1.Creat the policy to the account and select  the specific permission of billing of ec2 and cloud watch
+      2. sign to the user and check the specifi permission and monitor the ec2 , cloudwatch billing in aws account 
+ 
+8.How to give access only to northern virginia.
+Ans. 1. go to policy generator, select the JSON Policy 
+     2. {
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "*",
+      "Resource": "*",
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": "North virginia IP"  // Replace with the Northern Virginia IP range
+        }
+      }
+    }
+  ]
+}
+     3.give the IP range of the north Virginia as the SourceIP
+     4.After creating the policy, attach it to the IAM user or group of users that you want to restrict.
+
+9. Create a policy like when users are login into console, Without MFA not a single IAM user has able to access any AWS kind of aws services, he gots an permission denied error.
+Ans.  1.To create an IAM policy that requires Multi-Factor Authentication (MFA) for AWS console access, you can use the aws:MultiFactorAuthPresent condition in the policy.
+      2.{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Action": "*",
+      "Resource": "*",
+      "Condition": {
+        "Bool": {
+          "aws:MultiFactorAuthPresent": "false"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:ChangePassword",
+      "Resource": "arn:aws:iam::account-ID-without-hyphens:user/${aws:username}"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:GetUser",
+      "Resource": "arn:aws:iam::account-ID-without-hyphens:user/${aws:username}"
+    }
+  ]
+}
+       3. attach policy to the user 
+       4. Login to the user and check the permission that have give to the user.
+
+10.Create a resource based policy and attach to S3_B16 Bucket & only sunny user can able to access that bucket.
+Ans. 1. Create an IAM Policy for S3 Access , create the ploicy to the sunny user.
+     2. attach the policy to the S3 bucket and  try to get access to the sunny user.
+
+
+User:
+
+1.Add one user without permission.
+Ans. 1. creat an IAM User, and not attach any policy to that user.
+     2. sign through console and check the specific permission.
+
+2.Add user with console & programmatic user.
+Ans. 1. creat a user with consloe login
+     2. creat the user with programatical access.
+
+3. If IAM users are created w/o password, then how can you set the password of that IAM user as an Admin. 
+Ans. At the time of create the user select the autoupgrade option to set the password to the user.
+
+4.Add User Without Any permission (permission denied)
+Ans. Create the user without without any permission while selecting the permission attach to the user.
+
+5. S3 Read Only Access
+Ans. 1. Create the user and attach S3 read only  policy to the IAM user.
+     2. login to the user and try to access the upload the object.
+6. Add User with Programmatic Access
+Ans. 1. Create the user without console login.
+     2. Get the access key and password to login into the cli mode.
+     3. in cli mode 
+        aws configure
+     4. sucessfully login in cli
+
