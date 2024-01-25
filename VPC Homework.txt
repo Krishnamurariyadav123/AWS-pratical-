@@ -1,0 +1,24 @@
+1.Create a 5 VPC with different networks.
+Ans. 1. create the vpc.
+     2. Create the subnet in the vpc
+     3. create the IG and attach to the vpc
+     4. follow the 1,2,3 till the 5 vpc is not been created.
+
+2.Create a customised VPC and enable the DHCP & DNS option set.
+Ans. 1. Create the vpc , subnet,IG and attach too vpc 
+     2. Go to vps setting and configure the dhcp and dns setting according to the required.
+     
+3.Enable the flow logs of newly created custom VPC.
+Ans.1. create the vpc 
+    2. go to flow log setting
+    3. configure the flow lof such as name , destination ( cloudwatch, s3 bucke) , file format,partion timing,tag 
+    4. after configure the flow log setting save the change and review the flow log. 
+    5. do activityon the vpc instance and check the log that stor in you s3 bucket.
+
+4.Access the all S3 Buckets in Particular single customised VPC w/o internet, so how can we achieve it ?
+Ans. 1. Create the vpc and launch the instance
+     2. take the ssh of the instance and check the internet, hostname.
+     3. create the role for ec2 instance with s3 bucket full access 
+     4. attttach to the instance 
+     5. create the endpoint in vpc and try to get access to the s3 bucket.
+
