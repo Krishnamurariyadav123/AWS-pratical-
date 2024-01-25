@@ -1,0 +1,63 @@
+1.What is SNS ?
+Ans.Amazon Simple Notification Service (SNS) in AWS is a fully managed messaging service. It enables the distribution of messages or notifications to various endpoints, such as email, HTTP/HTTPS, SQS, Lambda, and more. SNS operates on a publish-subscribe model, allowing messages to be sent to topics, and subscribers receive relevant messages based on their interests
+
+2.Why do we use SNS ?
+Ans. It enables the seamless distribution of messages or notifications to various endpoints, facilitating real-time updates, alerts, and communication between different components or services in an AWS environment. SNS is valuable for its simplicity, flexibility, and ability to integrate with diverse AWS services, making it a key tool for building responsive and scalable applications.
+
+3. What is an Amazon SNS function, and how we can configure it.
+Ans. An SNS function is a Lambda function that is invoked by an SNS topic 4. It is used to process messages that are published to the topic and perform custom actions based on the contents of the message
+To configure an Amazon SNS function, you can use the Amazon SNS console 125. Here are the steps to create and configure an SNS function using the console:
+
+Open the Amazon SNS console and select Topics from the navigation pane.
+Choose the topic that you want to use to trigger the function.
+Select the Subscriptions tab and click Create subscription.
+In the Create subscription dialog box, select the protocol that you want to use to receive messages from the topic. You can choose from several supported protocols, such as AWS Lambda, HTTP, email, mobile push notifications, and mobile text messages (SMS) 1.
+Follow the instructions to configure the protocol that you selected.
+Click Create subscription to create the subscription.
+
+4.Difference between Amazon SNS & Amazon SQS.
+Ans.Amazon SNS is a fully managed distributed publish-subscribe system that operates on a Fan-out model . It is used to simplify the messaging architecture by offloading the message filtering logic from the subscribers and message routing logic from the publishers . SNS is a pub/sub system that supports A2A and A2P communication . It is used to send the same message to multiple consumers via topics . SNS provides several benefits, such as durability, security, accuracy, cost-efficiency, and support for multiple endpoint types 
+
+On the other hand, Amazon SQS is a fully managed distributed queuing system that decouples and scales microservices, distributed systems, and serverless applications . It is used to decouple distributed software systems and components . SQS is a queuing system that supports only A2A communication . It is used to process messages in a distributed environment . SQS provides several benefits, such as reliability, scalability, and cost-efficiency.
+
+5.What are the different delivery formats and transports in AWS SNS ?
+Ans.1.Protocols for Endpoints:
+HTTP/HTTPS: Messages can be sent as HTTP or HTTPS POST requests to web servers or endpoints.
+Email/Email-JSON: SNS can send messages as emails, supporting both standard email and JSON-formatted emails.
+2.Delivery Formats:
+Raw Message Delivery: The message payload is delivered as-is to the endpoint.
+Message Attributes: Messages can include optional attributes (key-value pairs) to provide additional information or context.
+Platform Endpoints:
+SNS allows you to create platform-specific endpoints for different mobile platforms, facilitating targeted push notifications. 
+
+6.What is the difference between SNS FIFO & Standard while creating the SNS topic.
+Ans.Standard SNS Topic: Does not guarantee the order in which messages are delivered. Messages might be delivered out of order.
+Message Deduplication:Standard SNS Topic: May deliver duplicate messages, and it's the responsibility of the subscriber to handle duplicates if necessary.
+Throughput:Standard SNS Topic: Supports higher throughput compared to FIFO topics, but does not guarantee order.
+Subscription Types:Standard SNS Topic: Supports various subscription types, including HTTP/HTTPS, email, SQS, Lambda, etc.
+
+FIFO SNS Topic: Guarantees that messages are delivered in the order they are sent. This is important when the order of messages is critical to the application.
+FIFO SNS Topic: Automatically deduplicates messages based on a Message Deduplication ID, which you can provide when publishing a message. This ensures that only one copy of a message with a specific deduplication ID is delivered within a five-minute deduplication interval.
+FIFO SNS Topic: Supports only FIFO SQS queues as subscribers. Each subscriber is associated with a specific message group ID, enabling ordered delivery to the subscribers.
+
+7.What is 10DLC in AWS ?
+Ans. 10DLC refers to a local, standard 10-digit long phone number used for sending application-to-person (A2P) messages. These numbers are typically associated with local carriers and are considered more reliable and reputable than short codes. A2P messaging involves sending automated messages from applications to end-users.
+AWS Simple Notification Service (SNS) allows you to send SMS messages, and it's possible that 10DLCs may be involved in the process, especially when sending A2P messages. When using 10DLCs for A2P messaging, businesses can achieve better deliverability and avoid potential issues associated with sending messages from random or unregistered numbers.
+
+8.What are FIFO topics on SNS ?
+Ans.FIFO topics are used to provide strict message ordering and message deduplication . They ensure that messages are delivered in the order in which they were sent and that each message is delivered exactly once . FIFO topics are useful in scenarios where the order of messages is important, such as financial transactions, stock trades, and other time-sensitive applications.
+
+9.What is SNS Mobile Push ?
+Ans. Amazon Simple Notification Service (Amazon SNS) is a fully managed distributed publish-subscribe system that operates on a Fan-out model . It provides the ability to send push notification messages directly to apps on mobile devices. Push notification messages sent to a mobile endpoint can appear in the mobile app as message alerts, badge updates, or even sound alerts . SNS supports a variety of endpoint types, including Amazon Kinesis Data Firehose, Amazon SQS, AWS Lambda, HTTP, email, mobile push notifications, and mobile text messages.
+ 
+
+
+
+
+
+
+
+
+
+
+
