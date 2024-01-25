@@ -1,0 +1,375 @@
+1.What is EC2, Why do we need EC2 service in cloud computing ?
+
+Ans.Amazon Elastic Compute Cloud (EC2) is a cloud computing platform that provides hosted virtual machines to run applications. It is a part of Amazon Web Services (AWS), which is a collection of cloud computing services offered by Amazon. EC2 allows users to launch virtual servers on demand and manage security, networking, and storage.EC2 in cloud computing provides scalable, cost-effective, and flexible virtual servers, allowing users to easily adjust computing resources based on demand, optimizing costs, and providing quick, on-demand access to computing capacity. 
+
+2.Features of Amazon EC2 ?
+Ans.Auto-scaling: Amazon EC2 can automatically scale up or down to meet demand, ensuring that you have the right amount of compute capacity at all times.
+Instance types: Amazon EC2 provides a wide range of instance types with different CPU, memory, and network configurations to choose from.
+Global infrastructure: Amazon EC2 provides the ability to place instances in multiple locations. Amazon EC2 locations are composed of Regions and Availability Zones. Availability Zones are distinct locations that are engineered to be insulated from failures in other Availability Zones and provide inexpensive, low latency network connectivity to other Availability Zones in the same Region.
+Secure and resizable compute capacity: Amazon EC2 provides secure and resizable compute capacity in the cloud. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
+Key Pair for instance security: Amazon EC2 uses public-key cryptography to encrypt and decrypt login information. Public and private keys are generated in pairs and the private key is kept secret.
+
+3.What is Hypervisor ? and its types ?
+Ans.A hypervisor is a software that enables virtualization, which is the creation and management of virtual machines (VMs) that run on a single physical machine. A VM is a simulated computer system that behaves like a real one, with its own operating system and applications. A hypervisor allows multiple VMs to share the same hardware resources, such as CPU, memory, disk, and network, without interfering with each other.
+There are two main types of hypervisors:
+
+Type 1 hypervisor: This type of hypervisor runs directly on the hardware of the host machine, without any underlying operating system. It is also called a bare-metal or native hypervisor.
+Type 2 hypervisor: This type of hypervisor runs as a software layer on top of an operating system on the host machine. It is also called a hosted or embedded hypervisor.
+
+4.EC2 Instance state ?
+Ans.pending: The instance is preparing to enter the running state. An instance enters the pending state when it is launched or when it is started after being in the stopped state.
+running: The instance is running and ready for use. You can connect to your instance and use it as you would use a computer sitting in front of you.
+stopping: The instance is preparing to be stopped. This may take a few minutes depending on the instance type. You can restart a stopped instance at any time.
+stopped: The instance is shut down and cannot be used. The instance can be started at any time. You are not charged for the instance usage while it is stopped, but you are charged for the storage of any Amazon EBS volumes attached to the instance.
+shutting-down: The instance is preparing to be terminated. This may take a few minutes depending on the instance type. You cannot restart a terminated instance.
+terminated: The instance has been permanently deleted and cannot be started. You are not charged for the instance usage after it is terminated, but you may be charged for any resources associated with the instance, such as Amazon EBS volumes or Elastic IP addresses.
+
+5.How many types of EC2 Instance-State codes ?
+Ans.There are six types of EC2 Instance-State codes, which represent the status of an instance. They are:
+
+0: pending - The instance is preparing to enter the running state.
+16: running - The instance is running and ready for use.
+32: shutting-down - The instance is preparing to be terminated.
+48: terminated - The instance has been permanently deleted and cannot be started.
+64: stopping - The instance is preparing to be stopped.
+80: stopped - The instance is shut down and cannot be used.
+
+6.What is the meaning of server hibernating mode ?
+Ans.Server hibernating mode is a power-saving feature that allows a server to enter a low-power state when it is not in use. In hibernating mode, the server saves its system state to a file on the disk and then shuts down completely. When the server is needed again, it can resume from the file and restore its previous state. Hibernating mode can help reduce energy consumption and costs, as well as prolong the lifespan of the server hardware.
+
+7.What is KMS ?
+Ans.AWS Key Management Service (KMS) is a product of Amazon that helps administrators to create, control and delete keys, which encrypt the data stored in AWS products and databases. You can use AWS KMS to protect your data with symmetric or asymmetric encryption, sign and verify messages, generate data keys and HMAC codes, and manage the lifecycle of your keys. AWS KMS integrates with most other AWS services that encrypt your data, such as S3, RDS, and Secrets Manager.
+
+8.AWS Amazon EC2 Instance types ?
+Ans.General Purpose Instances:
+
+Example: t4g, t3, t3a, t2, t3/T3a instances: Balanced compute, memory, and networking resources. Suitable for a variety of diversified workloads.
+Compute Optimized Instances:
+
+Example: c7g, c6g, c5, c5a, c5n instances: Ideal for compute-bound applications that require high-performance processors.
+Memory Optimized Instances:
+
+Example: x1e, u-6tb1.metal, u-9tb1.metal, r7, r6g, r5, r5a, r5n, x1, u-12tb1.metal: Designed for memory-intensive applications such as in-memory databases, real-time big data analytics, and high-performance computing (HPC).
+Storage Optimized Instances:
+
+Example: i3, i3en, d3, h1 instances: Optimized for high, sequential read and write workloads, suitable for data-intensive applications.
+Accelerated Computing Instances:
+
+Example: p4, p3, p2, inf1, g4ad, g4dn instances: Instances equipped with specialized hardware accelerators, such as GPUs (Graphics Processing Units) or FPGAs (Field Programmable Gate Arrays), for tasks like machine learning, graphics rendering, and other compute-intensive workloads.
+
+9.How many types of status checks happen in aws ?
+Ans.There are three types of status checks that happen in AWS1:
+
+System status checks monitor the AWS systems on which your instance runs. These checks detect underlying problems that require AWS involvement to repair, such as loss of network connectivity, loss of system power, or hardware issues.
+Instance status checks monitor the software and network configuration of your individual instance. These checks detect problems that require your involvement to repair, such as insufficient memory, corrupted file system, or misconfigured firewall.
+Attached EBS status checks monitor the health of the Amazon EBS volumes attached to your instance. These checks detect issues that affect the performance or availability of your volumes, such as degraded I/O performance, volume detachment, or hardware failure.
+
+10.What are EBS Volumes and its types ?
+Ans.General Purpose (gp2):
+
+Description: General Purpose SSD volumes that provide a balance of price and performance for a wide variety of transactional workloads.
+Provisioned IOPS (io1):
+
+Description: Provisioned IOPS SSD volumes designed to deliver predictable, high-performance I/O for I/O-intensive applications.
+Throughput Optimized (st1):
+
+Description: Throughput Optimized HDD volumes designed for frequently accessed, throughput-intensive workloads with large dataset sizes.
+Cold HDD (sc1):
+
+Description: Cold HDD volumes designed for less frequently accessed workloads with large amounts of data and a lower cost per gigabyte.
+Magnetic (standard):
+
+Description: Magnetic volumes provide the lowest cost per gigabyte and are suitable for workloads where data is accessed infrequently.
+
+11.
+Ans.On-Demand Instances:
+
+Description: On-Demand Instances allow you to pay for compute capacity by the hour or by the second (depending on the instance type), without any upfront costs or long-term commitments.
+Reserved Instances (RI):
+
+Description: Reserved Instances involve a one- or three-year commitment in exchange for a significant discount compared to On-Demand pricing. Users commit to a specific instance type in a particular region.
+Spot Instances:
+
+Description: Spot Instances allow users to bid for unused EC2 capacity, and if the bid price is higher than the current Spot price, the instance is provisioned. Spot Instances can be terminated by AWS with little notice if the capacity is needed.
+Dedicated Hosts:
+
+Description: Dedicated Hosts provide physical EC2 servers with dedicated, physical hardware. They are suitable for workloads that require a high level of control over the underlying infrastructure.
+Dedicated Instances:
+
+Description: Dedicated Instances run on hardware that's dedicated to a single customer but share the same host with other instances from the same AWS account.
+
+12.Difference between AWS AMI Image & AWS Template ?
+Ans.An AWS AMI Image is a snapshot of the software configuration of an EC2 instance, including the operating system, applications, and settings.AMI Image to launch multiple instances with the same software configuration, or create your own custom AMI Image from an existing instance.
+An AWS Template is a set of parameters that define the hardware and network configuration of an EC2 instance, such as the instance type, security group, key pair, etc.Template to launch multiple instances with the same hardware and network configuration, or create your own custom Template from an existing instance.
+
+13.What is NIC & it’s types ?
+Ans.NIC stands for Network Interface Card, and it is a hardware component that allows computers to connect to a network.
+Ethernet NIC:
+
+Description: Most common type of NIC used for connecting to Ethernet networks.
+Wireless NIC (Wi-Fi Adapter):
+
+Description: Enables wireless connectivity to Wi-Fi networks.
+Token Ring NIC:
+
+Description: Historically used for Token Ring networks (less common today).
+Modem (Modulator-Demodulator):
+
+Description: Converts digital data from a computer into analog signals for transmission over telephone lines (less common today).
+Bluetooth NIC:
+
+Description: Supports short-range wireless communication using Bluetooth technology.
+
+14.What is elastic IP ? & WHY were we used ?
+Ans.An Elastic IP (EIP) is a static IPv4 address designed for dynamic cloud computing environments. It is associated with your AWS account rather than a specific EC2 instance.
+Static IP Address:
+
+Purpose: Elastic IPs provide a static public IP address that you can assign to your AWS resources.
+Re-assignable:
+
+Purpose: Elastic IPs can be associated and disassociated from EC2 instances, providing flexibility.
+Preventing IP Address Changes:
+
+Purpose: Helps avoid changes in public IP addresses when instances are stopped and restarted.
+Public-Facing Services:
+
+Purpose: Ideal for hosting public-facing services that require a fixed IP address.
+
+15.What is the snapshot of why we use it ?
+Ans.A snapshot is a point-in-time copy of your data, such as an EBS volume or an EC2 instance. You can use snapshots to back up your data, restore your data in case of a failure, or migrate your data across regions and accounts. Snapshots are stored in Amazon S3, and are incremental, meaning that only the changed blocks of data are stored in each snapshot. This makes snapshots cost-effective and efficient. You can also encrypt, share, and archive your snapshots.
+
+16.How can we save money in snapshot costing, if an automated snapshot has been created ?
+Ans.Snapshot Lifecycle Policies:
+
+Use Case: Implement lifecycle policies to automate the deletion of old snapshots.
+Regular Review and Cleanup:
+
+Use Case: Periodically review your snapshots and delete those that are no longer necessary.
+Data Retention Policies:
+
+Use Case: Define a clear data retention policy for snapshots.
+Volume Deletion Considerations:
+
+Use Case: Be aware that when you delete an EBS volume, its associated snapshots are not automatically deleted.
+Copy Snapshots to Another Region (for Redundancy):
+
+Use Case: Copy important snapshots to another AWS region for redundancy.
+
+17.What is the lifecycle manager in snapshot ?
+Ans.Amazon Data Lifecycle Manager for Amazon EBS snapshots.
+vSphere Lifecycle Manager for virtual machine snapshots.
+Azure Storage lifecycle management policy for blob snapshots.
+
+18.Difference between Security Group & NACL ?
+Ans.NACL operates at the subnet level and applies rules to both inbound and outbound traffic individually.
+Security group operates at the instance level and applies rules to both inbound and outbound traffic together.
+NACL is stateless, meaning it does not keep track of the connection state and requires explicit rules for both directions of traffic.
+Security group is stateful, meaning it maintains the connection state and allows the response traffic back regardless of the rules.
+NACL is an optional form of protection, while security group is a required form.
+
+19.How many IP Addresses can we attach to the instances ?
+Ans.Private IP Addresses:
+
+Each EC2 instance in a Virtual Private Cloud (VPC) is automatically assigned a private IP address from the IP address range of the subnet to which it belongs.
+You can also manually assign additional private IP addresses to the instance within the same subnet.
+Elastic Network Interfaces (ENIs):
+
+Each EC2 instance can be associated with one or more Elastic Network Interfaces (ENIs).
+Each ENI can have multiple private IP addresses assigned to it.
+Public IP Addresses:
+
+By default, instances launched in a public subnet are assigned a public IP address.
+The number of public IP addresses you can assign depends on the instance type and the size of the subnet.
+IPv6 Addresses:
+
+Instances in a VPC can be assigned IPv6 addresses in addition to IPv4 addresses.
+The number of IPv6 addresses you can assign depends on the instance type and the size of the subnet.
+
+
+20.How many types of volume states do we have ?
+Ans.Creating:
+
+The volume is in the process of being created. This state occurs when you have initiated the creation of a new EBS volume.
+Available:
+
+The volume has been created and is ready for use. In this state, the volume is not attached to any EC2 instance.
+In-Use:
+
+The volume is attached to an EC2 instance and is actively being used by that instance.
+Deleting:
+
+The volume is in the process of being deleted. This occurs when you have initiated the deletion of an EBS volume.
+
+21.What is a key pair, and its types ?
+Ans.In Amazon Web Services (AWS), a key pair is a set of security credentials that consists of a public key and a private key. Key pairs are used for secure communication and authentication with instances, typically Amazon EC2 instances. The public key is stored on the instance, while the private key is kept secure by the user. 
+Amazon EC2 Key Pairs:
+
+Description: These key pairs are used for SSH (Secure Shell) authentication when connecting to EC2 instances.
+AWS Identity and Access Management (IAM) Access Key Pairs:
+
+Description: IAM users can have access key pairs (access key ID and secret access key) for programmatic access to AWS services via APIs.
+AWS Key Management Service (KMS) Key Pairs:
+
+Description: KMS generates and manages key pairs for encryption purposes.
+
+22.What is load balancer and its types ?
+Ans.a load balancer is a service or device that distributes incoming network traffic across multiple servers to ensure no single server becomes overwhelmed with too much load. The primary goal is to enhance the availability and reliability of applications by evenly distributing requests among healthy servers. Load balancing can be crucial for scaling applications, improving performance, and ensuring high availability.
+
+Application Load Balancer:
+ This type of load balancer makes routing decisions at the application layer (HTTP/HTTPS) and supports path-based routing. It can route requests to one or more ports on each container instance in your cluster. Application Load Balancers support dynamic host port mapping, which allows you to have multiple tasks from a single service on the same container instance1.
+
+Network Load Balancer: This type of load balancer makes routing decisions at the transport layer (TCP/SSL) and can handle millions of requests per second. It uses a flow hash routing algorithm to select a target from the target group for the default rule. It forwards the request without modifying the headers. Network Load Balancers also support dynamic host port mapping.
+
+Classic Load Balancer:
+ This type of load balancer operates at both the request level and the connection level. It balances the load across multiple Amazon EC2 instances and supports either EC2-Classic or a VPC. Classic Load Balancers do not support dynamic host port mapping.
+
+Gateway Load Balancer: This type of load balancer is designed to deploy, scale, and manage third-party virtual appliances such as firewalls, intrusion detection and prevention systems, and deep packet inspection systems. It operates at the third layer of the Open Systems Interconnection (OSI) model and supports both TCP and UDP protocols. Gateway Load Balancers use Geneve encapsulation to preserve the original source and destination IP addresses of the packets.
+
+23.Features of Load Balancers ?
+Ans.Distribution of Traffic:
+
+Description: The primary function of a load balancer is to evenly distribute incoming network traffic across multiple servers or resources.
+High Availability:
+
+Description: Load balancers enhance the availability of applications by directing traffic away from unhealthy or failed servers to healthy ones.
+Scalability:
+
+Description: Load balancers facilitate the scaling of applications by allowing the addition or removal of servers dynamically.
+Health Checks:
+
+Description: Load balancers regularly perform health checks on servers to determine their availability and responsiveness.
+
+24.What is ASG ? & Its types ?
+Ans.ASG stands for Auto Scaling Group, a service in Amazon Web Services (AWS) that automatically adjusts the number of EC2 instances in a group based on defined policies, ensuring optimal performance and availability.
+Dynamic Scaling (Scale Out/In):
+Scale Out: Increases the number of instances during high demand.
+Scale In: Reduces the number of instances during low demand.
+Scheduled Scaling:
+Allows you to schedule specific scaling actions at predefined times.
+
+25.What is a Health Check ?
+Ans.In EC2, a health check is a mechanism used by an Auto Scaling Group to determine the health status of its instances. It ensures that only instances that pass the health check are considered healthy and can receive traffic. The health check verifies that instances are responsive and operating as expected based on defined criteria, such as successful HTTP responses or custom scripts.
+
+26.what is group of LB ?
+Ans.a group of LB might mean a set of instances managed by an Auto Scaling Group that are load-balanced by one or more Load Balancers to distribute incoming traffic and ensure high availability.
+
+27.Different between Application and web server.
+Ans.Web Server:
+Handles HTTP requests.
+Manages static content delivery (HTML, images).
+Examples: Apache, Nginx.
+Application Server:
+Executes business logic, handles dynamic content.
+Supports application components (EJB, servlets).
+Examples: Tomcat, WildFly, WebSphere.
+
+28.What is the target group ?
+Ans.In AWS, a target group is part of the Elastic Load Balancing service. It is a logical grouping of targets (such as EC2 instances) that receive incoming traffic from the load balancer. The target group routes requests based on configured rules, helping distribute traffic and manage the health of the registered targets.
+
+29.How many types of the Scaling option ?
+Ans.Vertical Scaling (Scale Up/Down):
+Scale Up: Increase the capacity of an existing instance by adding more resources (CPU, memory).
+Scale Down: Decrease the capacity by removing resources from an existing instance.
+Horizontal Scaling (Scale Out/In):
+Scale Out: Increase the number of instances to handle higher demand or traffic.
+Scale In: Decrease the number of instances during lower demand or reduced traffic.
+
+30.Types Auto scaling ?
+Ans.Horizontal Scaling (Dynamic Scaling):
+Scale Out: Increases the number of instances to handle higher demand or traffic.
+Scale In: Decreases the number of instances during lower demand or reduced traffic.
+Scheduled Scaling:
+Allows you to schedule specific scaling actions at predefined times.
+Useful for anticipated changes in demand based on known patterns.
+
+31. Difference between AMI & Snapshot ?
+Ans.AMI (Amazon Machine Image):
+Purpose: An AMI is a pre-configured virtual machine image used to create EC2 instances.
+Content: It includes an operating system, application server, and applications.
+Use Case: Ideal for creating new instances with a specific configuration.
+
+Snapshot:
+Purpose: A snapshot is a point-in-time copy of the data on an EBS (Elastic Block Store) volume.
+Content: It includes the data on the volume, not the operating system or applications.
+Use Case: Used for data backup, recovery, and creating new volumes.
+
+32.What is difference between EBS/EFS/S3
+Ans.EBS (Elastic Block Store):
+Type: Block storage.
+Use Case: Attached to EC2 instances as block devices for storing operating systems, applications, and data.
+Performance: Optimized for low-latency and high-throughput performance.
+Access: Tied to a specific Availability Zone (AZ).
+
+EFS (Elastic File System):
+Type: File storage.
+Use Case: Shared file storage accessible by multiple EC2 instances, suitable for applications with multiple instances that need shared access to files.
+Performance: Designed for scalability and shared access, suitable for a wide range of workloads.
+Access: Accessible from multiple AZs within a region.
+
+S3 (Simple Storage Service):
+Type: Object storage.
+Use Case: Scalable and durable object storage suitable for storing and retrieving any amount of data.
+Performance: Optimized for high throughput and designed for durability.
+Access: Accessible from anywhere on the internet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
