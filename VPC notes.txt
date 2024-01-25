@@ -1,0 +1,92 @@
+1.What is VPC ?
+Ans.VPC enables the creation of a virtual network environment in AWS, providing control and customization over the network configuration for your AWS resources.
+
+2.What are the Subnets when working with VPC ?
+Ans.subnets are subdivisions of the IP address range of your VPC.Subnets are isolated from each other and can be associated with different availability zones.Each subnet has its route table, allowing you to control the traffic flow between subnets.
+
+3.What is NAT Device ?
+Ans.
+A NAT (Network Address Translation) device is a network device that allows multiple devices within a private network to share a single public IP address when accessing the internet. It performs the translation of private IP addresses to a public IP address and vice versa.
+
+4.What is the difference between stateful & stateless filtering ?
+Ans.Stateless packet filtering firewalls check the source and destination IP addresses, protocols (User Datagram Protocol (UDP) and Transmission Control Protocol (TCP)), and port addresses as well. If both IP addresses match, the packet is considered secured and verified.
+stateful packet filtering firewalls keep track of the state of network connections. Once a particular kind of traffic has been approved by a stateful firewall, it is added to a state table. The state table entries are created for TCP (Transmission Control Protocol) streams or UDP (User Datagram Protocol) datagrams that are allowed to communicate through the firewall in accordance with the configured security policy.
+
+5.What are the advantages of using default VPC ?
+Ans.Convenience: Default VPC is automatically available in each region, offering a pre-configured network for quick resource deployment.
+Ease of Use: Simplifies the setup for users by providing default settings, allowing immediate launch of instances without manual configuration.
+Default Subnets: Comes with default subnets in each Availability Zone, facilitating resource distribution across zones.
+Internet Connectivity: Default VPC includes an Internet Gateway, enabling instances to communicate with the internet by default.
+Security Groups and Network ACLs: Default security groups and network access control lists (ACLs) are provided for basic security measures.
+
+6.What is the internet gateway in VPC ?
+Ans.Function: Enables instances within the VPC to connect to the internet and allows internet traffic to reach instances.
+Two-Way Communication: Acts as a bi-directional gateway, allowing outbound traffic from instances to the internet and inbound traffic from the internet to instances.
+Routing: Internet Gateway is associated with a VPC and is added to the VPC's route table to direct traffic appropriately.
+
+7.What is Network ACL in VPC ?
+Ans.In Amazon VPC (Virtual Private Cloud), a Network Access Control List (ACL) is a security feature acting as a stateless firewall for subnets. 
+Function: Controls inbound and outbound traffic at the subnet level.
+Stateless: Evaluates each packet individually without considering the connection state.
+Rules: Defines numbered rules for permitting or denying traffic based on IP, protocols, and port ranges.
+Association: Associated with subnets to filter traffic entering or leaving those subnets.
+
+8.What is the Security Group in VPC ?
+Ans.In Amazon VPC (Virtual Private Cloud), a Security Group is a virtual firewall for instances, controlling inbound and outbound traffic at the instance level.
+Function: Controls traffic to and from instances.
+Scope: Operates at the instance level, allowing you to define rules for each instance.
+Stateful: Keeps track of the state of connections, allowing return traffic for allowed outbound connections.
+Rules: Consists of inbound and outbound rules specifying allowed traffic types.
+Dynamic Updates: Supports dynamic rule updates without instance restarts.
+
+9.What is an Elastic IP Address in VPC, and why do we need to use, realtime example ?
+Ans.An Elastic IP (EIP) address in an Amazon VPC (Virtual Private Cloud) is a static, public IPv4 address designed for dynamic cloud computing.
+Purpose: Provides a static IP address that you can associate with your instance.
+Use Case: Useful for scenarios where you need a persistent public IP address for an EC2 instance, such as hosting a website or application.
+Portability: EIPs are portable and can be quickly reassigned to different instances within the same AWS account.
+hosting a web application on an EC2 instance in AWS. You want users to access the application using a fixed public IP address. By associating an Elastic IP address with your EC2 instance, you ensure that the IP address remains the same even if the instance is stopped and restarted. This is beneficial for scenarios where users need a consistent and unchanging IP address to access your application or services.
+
+10.How does ELB Affect a VPC ?
+Ans.Load Distribution:
+Distributes incoming traffic across multiple instances within the VPC to prevent overloading any single instance.
+High Availability:
+Enhances application availability by automatically redirecting traffic to healthy instances and across multiple Availability Zones.Security:
+Acts as an additional security layer, hiding instance IP addresses and allowing configuration of security groups.
+Monitoring:
+Provides metrics and logging for monitoring application health and performance.
+Auto Scaling Integration:
+Integrates with Auto Scaling to dynamically adjust to changes in demand by scaling the number of instances.
+
+11.Explain Bastion Host Concept ?
+Ans.A Bastion Host is a hardened, secure server positioned on the perimeter of a network, typically within a DMZ (Demilitarized Zone).
+Purpose: Serves as a secure entry point for accessing private resources within a network.
+Security Measures: Configured with strong security measures, such as minimal services, strict access controls, and constant monitoring.
+
+12.What is Peering ? Why do we need to peer at two VPC’s ?
+Ans.Peering is the direct interconnection of VPCs, allowing them to communicate with each other using private IP addresses as if they were part of the same network.
+Resource Sharing: Enables the sharing of resources and services between VPCs without exposing them to the public internet.
+Centralized Management: Simplifies network management by allowing communication between different components or applications hosted in separate VPCs.
+peering in AWS VPC enables secure and direct communication between separate VPCs, promoting resource sharing and simplifying network architecture and management.
+
+13.What is VPN, Where do we use VPN Tunnel ?
+Ans.A VPN, or Virtual Private Network, is a technology that creates a secure and encrypted connection over the internet, allowing users to access private networks or the internet in a secure manner. VPNs use tunneling protocols to establish a secure communication channel.
+ VPN tunnels are used to create secure and encrypted connections over the internet, providing a means for secure remote access, interconnecting networks, connecting clients to networks, enabling cloud connectivity, and ensuring the secure transmission of data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
