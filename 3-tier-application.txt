@@ -1,0 +1,36 @@
+3-Tier-architecture
+
+1.You guys firstly setup 2-Tier Architecture.
+Ans. 1. laucnh the ec2 instance and install the tomact services. And check the status of tomact server on EC2 instance.
+     2. Crete the databases in RDS Services of AWS. 
+     3. install mysql on ec2 instance and configure 
+     4. take the mysql access on ec2 instance: mysql -h (RDS database endpoint) -u (RDS database user) -p(RDS database user password)
+      5. create the database and table inside the databases.
+      6.confgiure the tomcat file /etc/tomact/contex.xml
+     <Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource"
+           maxTotal="500" maxIdle="30" maxWaitMillis="1000"
+           username="mydblogin" password="mydbpassword" driverClassName="com.mysql.jdbc.Driver"
+           url="jdbc:mysql://RDS database endpoint:3306/mysql database name?useUnicode=yes&amp;characterEncoding=utf8"/>
+      7. Save the change and restart the services.
+
+
+2.Deploy the reverse proxy in first Tier using nginx web-server
+Ans. 1. Deploy the rds on ec2 instance and store the database in tomact web server.
+     2. lauch the new instance on install nginx on that , and configur the nginx web server for reverse proxy 
+     3. configute the /etc/nginx/nginx.conf file :  location / { proxy_pass http://ip_of_instance:8080; }
+     4. restart the nginx servic and hit the ip address to check the reverse proxy server.
+
+
+3.Attach Domain
+Ans. 1. go the ACM service of aws and request for the domain.
+     2. take the domain form the 3 party vendor and assign to the ACM services. 
+     3. edit the CNAME , A , SOA , in the domain that give from ACM to the 3 party domain services.
+4.Check Nginx version you found Legacy versions 1.18 is deployed then you have to upgrade your web-server into Latest version of Nginx (1.24) without downtime of StudentApp Application (Production)
+Ans. 1. install the nginx in the ec2 instance 
+     2. check the version of ngixn in the ec2 unstance by using nginx -version 
+     3. update tbhe nginx server by using  sudo yum update nginx 
+     4. now check the version of nginx.
+
+
+ 
+ 
