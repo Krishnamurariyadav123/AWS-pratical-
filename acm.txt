@@ -1,0 +1,70 @@
+1. what is web-site standard ?
+Ans.Technical Standards: These are guidelines or specifications set by organizations like the World Wide Web Consortium (W3C) that define how web technologies should be used and implemented.
+Accessibility Standards: These are guidelines for ensuring that websites are accessible to people with disabilities. 
+Performance Standards: These are guidelines for optimizing the performance of websites, including factors like page load times, responsiveness, and efficient use of resources.
+
+2.Use case of Cloudfront.
+Ans.Website Acceleration: CloudFront can accelerate the delivery of static and dynamic web content by caching it at edge locations closer to end-users.
+API Acceleration: CloudFront can accelerate the delivery of APIs by caching API responses at edge locations.
+Security: CloudFront provides security features such as HTTPS support, origin access identity (OAI), and integration with AWS Web Application Firewall (WAF). 
+Global Content Distribution: CloudFront helps distribute content globally across its network of edge locations.
+
+3.Distributed integration services.
+Ans.Interconnected Services: Distributed integrated services often involve multiple services or components that communicate and collaborate with each other over a network.
+Integration: Integration is a crucial aspect of distributed integrated services, as it involves connecting disparate services and systems to enable seamless communication and data exchange.
+Fault Tolerance and Resilience: Distributed integrated services often incorporate mechanisms for fault tolerance and resilience to ensure continuous operation even in the face of failures or disruptions. 
+
+4.what is edge location.
+Ans.In Amazon Web Services (AWS), an edge location refers to a point of presence (POP) in the CloudFront content delivery network (CDN) or Amazon Route 53 domain name system (DNS) service. These edge locations are distributed globally to bring content closer to end-users, reducing latency and improving the performance of applications and websites.
+
+5.What is CDN and how it work.
+Ans.mazon CloudFront uses a network of edge locations to cache and deliver content to users with low latency. When a user requests content, CloudFront routes the request to the nearest edge location that contains a cached copy of the content. If the content is not cached at the edge location, CloudFront retrieves it from the origin server
+Imagine you’re serving an image from a traditional web server (not CloudFront). Users access the image using a URL like https://example.com/sunsetphoto.png.With CloudFront, each user request is routed through the AWS backbone network to the edge location that can best serve the content.AWS dramatically reduces the number of networks the request passes through, resulting in lower latency and higher data transfer rates.Copies of your files (objects) are cached in multiple edge locations globally, enhancing reliability and availability.
+
+6.How many type key we get when we issue the domain from vendor?
+Ans.Authorization Code (Auth Code): Also known as an EPP code (Extensible Provisioning Protocol code), this is a unique code that serves as an additional layer of security when transferring your domain to another registrar.
+DNSSEC Key: If you choose to enable DNS Security Extensions (DNSSEC) for your domain, you'll generate cryptographic keys used to sign your domain's DNS records. 
+API Access Key: Some registrars offer APIs (Application Programming Interfaces) that allow you to programmatically manage your domain settings.
+SSL Certificate Key (Optional): If you purchase an SSL certificate for your domain (typically used to enable HTTPS encryption for your website), you'll generate a key pair consisting of a private key and a public key.
+
+7.what is TLS and version.
+Ans.TLS stands for Transport Layer Security. It's a cryptographic protocol designed to provide secure communication over a computer network. TLS encrypts data transmitted between clients and servers to ensure confidentiality and integrity. It's commonly used to secure web browsing (HTTPS), email transmission (SMTPS, IMAPS), and other network services.
+TLS 1.0: Released in 1999 as an upgrade to SSL 3.0 (Secure Sockets Layer), TLS 1.0 introduced several security enhancements and fixes to vulnerabilities found in SSL 3.0.
+
+TLS 1.1: Published in 2006, TLS 1.1 addressed some security weaknesses identified in TLS 1.0 and introduced support for new cryptographic algorithms.
+
+TLS 1.2: Released in 2008, TLS 1.2 further strengthened security by deprecating older cryptographic algorithms susceptible to attacks and introducing support for newer, more secure algorithms.
+
+TLS 1.3: Published in 2018, TLS 1.3 is the latest version of the protocol. It offers significant improvements in security, performance, and privacy compared to previous versions.
+
+8. List of compnay provice free domain?
+Ans. Bluehost: Bluehost is a web hosting provider that often runs promotions offering a free domain name registration for the first year with its hosting plans.
+
+Hostinger: Hostinger is a budget-friendly web hosting provider that offers a free domain name with some of its hosting packages.
+nfinityFree: InfinityFree is another free web hosting provider that offers free subdomains and allows you to connect your custom domain.
+
+Google Domains: While Google Domains does not offer free domain registration, it provides competitive pricing and additional features like DNS management and privacy protection.
+
+9.what is CA is SSl
+Ans.Certificate Authority, is a trusted organization that issues digital certificates used to verify the identity of individuals, organizations, or servers on the internet.Certificate Issuance: When a website owner wants to secure their website with SSL/TLS encryption, they obtain a digital certificate from a CA. This certificate contains information about the website, such as its domain name and public key, and is digitally signed by the CA.Encryption and Data Integrity: Once the secure connection is established, all data exchanged between the client and server is encrypted to prevent eavesdropping and tampering.
+
+10.How to created SSL using open SSL?
+Ans.Install OpenSSL: If you haven't already, you'll need to install OpenSSL on your system. OpenSSL is commonly available on most Linux distributions and can be installed using the package manager.
+Generate a Private Key: The first step is to generate a private key. You can do this using the 'openssl genpkey'
+Create a Certificate Signing Request (CSR): Next, you'll create a CSR that includes information about the entity requesting the certificate (e.g., your website). Use the openssl req command to generate the CSR.
+Submit the CSR to a Certificate Authority (CA): Once you have the CSR, you can submit it to a CA to obtain a signed SSL certificate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
